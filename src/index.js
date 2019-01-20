@@ -10,5 +10,6 @@ const server = new ApolloServer({
   context: { models }
 });
 
-server.listen()
+server
+  .listen()
   .then(({ url }) => console.log('Server is running on localhost:4000'));

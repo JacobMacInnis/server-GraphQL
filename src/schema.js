@@ -1,14 +1,13 @@
 'use strict';
-const { gql } = require('apollo-server')
+const { gql } = require('apollo-server');
 
-const typeDefs = gql` 
+const typeDefs = gql`
   type User {
     id: Int!
     name: String!
     email: String!
     recipes: [Recipe!]!
   }
-
   type Recipe {
     id: Int!
     title: String!
@@ -16,13 +15,11 @@ const typeDefs = gql`
     direction: String!
     user: User!
   }
-
   type Query {
     user(id: Int!): User
     allRecipes: [Recipe!]!
     recipe(id: Int!): Recipe
   }
-
   type Mutation {
     createUser(name: String!, email: String!, password: String!): User!
     createRecipe(
